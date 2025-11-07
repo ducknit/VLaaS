@@ -1,0 +1,13 @@
+# Simple Lab Environment (Node.js + Python preinstalled)
+FROM ubuntu:22.04
+
+# Install base utilities
+RUN apt-get update && apt-get install -y \
+  curl git python3 python3-pip nodejs npm && \
+  apt-get clean
+
+# Set default working directory
+WORKDIR /lab
+
+# Default command
+CMD ["bash"]
